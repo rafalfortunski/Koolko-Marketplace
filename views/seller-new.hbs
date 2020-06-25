@@ -1,0 +1,69 @@
+<section class="section">
+    <div class="column is-half is-offset-one-quarter">
+        <h1 class="title">Otwórz swój własny sklep na Koolko</h1>
+        {{#each errors}}
+        <div class="notification is-danger is-light">
+            {{ msg }}
+        </div>
+        {{/each}}
+        <form action="/start-selling" method="post">
+        <div class="field">
+        <label class="label">Nazwa sklepu</label>
+        <div class="control">
+            <input class="input" type="text" name="seller_name" placeholder="">
+        </div>
+        </div>
+
+        <div class="field">
+            <label class="label">Nazwa firmy</label>
+            <div class="control is-expanded">
+                <input class="input" type="text" name="company_name" placeholder="">
+            </div>
+        </div>
+
+        <div class="field">
+            <label class="label">Ulica i numer</label>
+            <div class="control is-expanded">
+                <input class="input" type="text" name="street" placeholder="">
+            </div>
+        </div>
+
+        <div class="field">
+            <label class="label">Kod pocztowy</label>
+            <div class="control is-expanded">
+                <input class="input" type="text" name="postal_code" placeholder="">
+            </div>
+        </div>
+
+        <div class="field">
+            <label class="label">Miasto</label>
+            <div class="control is-expanded">
+                <input class="input" type="text" name="city" placeholder="">
+            </div>
+        </div>        
+
+        <div class="field">
+            <label class="label">Kraj</label>
+            <div class="control has-icons-left">
+            <div class="select is-disabled">
+            <select>
+              <option name="country" selected>Polska</option>
+            </select>
+           </div>
+           <span class="icon is-left">
+            <i class="fas fa-globe"></i>
+            </span>
+        </div>
+        </div>
+    <div class="field">
+        <p class="control">
+            <button type="submit" class="button is-primary">
+            Załóż konto
+            </button>
+        </p>
+    </div>
+    
+    <input class="is-hidden" name="_csrf" value="{{csrfToken}}">
+    </form>
+</div>
+</section>

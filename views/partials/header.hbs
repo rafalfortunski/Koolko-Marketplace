@@ -1,0 +1,77 @@
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="/">
+      <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
+    </a>
+
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <a href="/c/books" class="navbar-item">
+        Książki
+      </a>
+
+      <a href="/c/zabawki" class="navbar-item">
+        Zabawki
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          Testowe linki
+        </a>
+
+        <div class="navbar-dropdown">
+          <a href="/panel/" class="navbar-item">
+            Panel sprzedawcy
+          </a>
+          <a class="navbar-item">
+            Jobs
+          </a>
+          <a class="navbar-item">
+            Contact
+          </a>
+          <hr class="navbar-divider">
+          <a class="navbar-item">
+            Report an issue
+          </a>
+        </div>
+    </div>
+    
+        {{!-- Wyszukiwarka jest obecnie wyłączona
+        
+        <div class="field has-addons navbar-item">
+            <p class="control">
+            <input class="input" type="text" placeholder="Find a post">
+            </p>
+            <p class="control">
+            <button class="button">
+                Szukaj
+            </button>
+            </p>
+        </div> --}}
+    </div>
+    <div class="navbar-end">
+      <div class="navbar-item">
+        {{#if user }}
+        {{> user-menu }}
+        {{ else }}
+        <div class="buttons">
+          <a href="/register" class="button is-primary">
+            <strong>Załóż konto</strong>
+          </a>
+          <a href="/login" class="button is-light">
+            Zaloguj się
+          </a>
+        </div>
+        {{/if}}
+
+      </div>
+    </div>
+  </div>
+</nav>
